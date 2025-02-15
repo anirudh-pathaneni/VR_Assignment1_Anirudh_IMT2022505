@@ -54,23 +54,20 @@ def stitch_images(img1, img2, keypoints1, keypoints2, matches):
 
     return warped_img1
 
-def main():
-    # Load images
-    img1, img2 = load_images('IMG_4474.png','IMG_4473.png')
 
-    # Detect and match features
-    keypoints1, keypoints2, matches = detect_and_match_features(img1, img2)
+# Load images
+img1, img2 = load_images('./images/IMG_4474.png','./images/IMG_4473.png')
 
-    # Draw matches
-    matched_image = draw_matches(img1, img2, keypoints1, keypoints2, matches)
-    cv2.imshow('Matched Features', matched_image)
+# Detect and match features
+keypoints1, keypoints2, matches = detect_and_match_features(img1, img2)
 
-    # Stitch images into panorama
-    panorama = stitch_images(img1, img2, keypoints1, keypoints2, matches)
-    cv2.imshow('Panorama', panorama)
+# Draw matches
+matched_image = draw_matches(img1, img2, keypoints1, keypoints2, matches)
+cv2.imshow('Matched Features', matched_image)
 
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+# Stitch images into panorama
+panorama = stitch_images(img1, img2, keypoints1, keypoints2, matches)
+cv2.imshow('Panorama', panorama)
 
-if __name__ == "__main__":
-    main()
+cv2.waitKey(0)
+cv2.destroyAllWindows()

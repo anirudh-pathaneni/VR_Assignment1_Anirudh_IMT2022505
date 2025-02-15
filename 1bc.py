@@ -1,10 +1,10 @@
 import cv2
 import numpy as np
-from skimage import measure, color, morphology
+from skimage import measure, color
 from matplotlib import pyplot as plt
 
 # Load the image
-image = cv2.imread('sample.png')
+image = cv2.imread('./images/sample.png')
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Apply Gaussian blur to reduce noise
@@ -23,7 +23,6 @@ colored_labels = color.label2rgb(labels, bg_label=0)
 
 # Count coins by counting unique labels (excluding background)
 num_coins = len(np.unique(labels)) - 1
-
 print(f"Number of coins detected: {num_coins}")
 
 # Display segmented coins

@@ -3,13 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the image
-image = cv2.imread('./sample.png', cv2.IMREAD_GRAYSCALE)
+image = cv2.imread('./images/sample.png', cv2.IMREAD_GRAYSCALE)
 
-# Apply Canny Edge Detection
-# Step 1: Gaussian Blur
+# Gaussian Blur
 blurred = cv2.GaussianBlur(image, (5, 5), 1.5)
 
-# Step 2: Canny Edge Detection
+# Canny Edge Detection
 edges = cv2.Canny(blurred, threshold1=70, threshold2=140)
 
 # Display the results
