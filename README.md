@@ -1,4 +1,4 @@
-# README for Image Processing Project
+# Coin Detection and Image Stitching - OpenCV
 
 ## Overview
 This project consists of two Python scripts that perform various image processing tasks including coin detection, segmentation, counting, and image stitching using SIFT keypoints.
