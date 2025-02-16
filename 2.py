@@ -45,6 +45,7 @@ def stitch_images(img1, img2, keypoints1, keypoints2):
 
     return warped_img1
 
+
 # Load images
 img1, img2 = load_images('./images/IMG_4474.png','./images/IMG_4473.png')
 
